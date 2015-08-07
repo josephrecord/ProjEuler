@@ -103,11 +103,3 @@ n = '\
 n = n.split(" ")
 n = [int(x) for x in n]
 print(sum(n))
-
-##n = [[x for x in n[i:(i+50)]] for i in range(0, 100*(50-1), 50)]
-##
-##s = [0]
-##for i in range(0,98):
-##    s = sum(n[i][0:50], s)
-##print(s)
-
