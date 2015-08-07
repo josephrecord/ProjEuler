@@ -14,3 +14,4 @@ for i in range(3, 2000000):
     if is_prime(i) == True:
         primeSum = primeSum + i
 
+print(primeSum)

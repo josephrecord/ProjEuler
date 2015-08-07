@@ -16,6 +16,4 @@ while numPrimes < 10001:
         numPrimes = numPrimes + 1
     startNum = startNum + 1
 
-    
-
-
+print(startNum-1)
