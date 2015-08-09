@@ -24,5 +24,3 @@ while True:
         print(tri(n))
         break
     n = n + 1
-        
-    

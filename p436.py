@@ -28,5 +28,3 @@ for i in range (1,1000000000):
 print( jscore / (lscore + jscore) )
 
 #0.5276653805276654
-        
-    
