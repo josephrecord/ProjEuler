@@ -1,5 +1,3 @@
-import itertools
-
 def check_leap(n):
         # n is an int representing the year
 	if n%4 == 0:
@@ -50,14 +48,33 @@ def count_days(start, end):
 		count = count + 1
 	return count
 
+def inc_dow(start):
+	if start == 'sun':
+		return 'mon'
+	elif start == 'mon':
+		return 'tue'
+	elif start == 'tue':
+		return 'wed'
+	elif start == 'wed':
+		return 'thr'
+	elif start == 'thr':
+		return 'fri'
+	elif start == 'fri':
+		return 'sat'
+	elif start == 'sat':
+		return 'sun'
 
 date = [1, 1, 1901]
-day_of_week = ['sun', 'mon', 'tue', 'wed', 'thr', 'fri', 'sat']
+dow = 'tue'
+suns = 0
 
-for i in range(1,369):
-	print(date, day_of_week)
+tot_days = count_days([1, 1, 1901], [31, 12, 2000])
+
+for i in range(0, tot_days):
+	# print(date, dow)
+	if date[0] == 1 and dow == 'sun':
+		suns = suns + 1
 	inc_day(date)
-	itertools.cycle(day_of_week)
+	dow = inc_dow(dow)
 
-print(count_days([1, 1, 1901], [31, 12, 1901]))
-
+print(suns)
