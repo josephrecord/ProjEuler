@@ -1,5 +1,18 @@
-from itertools import permutations
+import math
+from time import time
 
-p = list(permutations(range(10)))
+def sum_digits(n):
+	# Sum the digits of int n
+	s = 0
+	while n:
+		n, rem = divmod(n, 10)
+		s += rem
+	return s
 
-print(p[999999])
+t = time()
+
+n = 100
+f = math.factorial(n)
+f = sum_digits(f)
+
+print(f, time()-t)
