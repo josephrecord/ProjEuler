@@ -1,5 +1,3 @@
-
-
 ur = [x**2 for x in range(3, 1003, 2)]
 
 l = len(ur)
