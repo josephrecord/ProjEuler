@@ -19,6 +19,7 @@ def mk_list(n):
 	return ls
 
 def mk_num(list):
+	# inverse operation of mk_list
 	s = map(str, list)
 	s = ''.join(s)
 	s = int(s)
@@ -32,8 +33,24 @@ def rotate(num, t):
 		rotator.rotate(-1)
 	return mk_num(list(rotator))
 
-print(rotate(197112365, 1122132))
+def is_circ_prime(n):
+	str_n = str(n)
+	size_n = len(str_n)
+	num_rotates = size_n
+	count = 0
+
+	for i in range(0, num_rotates):
+		test_prime = rotate(n, i)
+		if is_prime(test_prime) == False:
+			return False
+		elif is_prime(test_prime) == True and count == num_rotates-1:
+			return True
+		count += 1
 
 
-# for n in range(2, 100):
-# 	print(n, is_prime(n))
+county = 0
+for n in range(2, 1000001):
+	if is_circ_prime(n) == True:
+		print(n)
+		county += 1
+print(county)
